@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="./css/reset.min.css">
+	<link rel="stylesheet" href="./2.index.css">
+	<script src="./js/prefixfree.min.js" async></script>
+	<!-- 计算rem -->
+	<script>
+		window.addEventListener('orientationchange', function (ev) {
+			ev.preventDefault()
+			let rotate = Math.abs(this.window.orientation);
+			if (rotate === 90) {
+				//横屏
+				alert('横屏体验不佳，请您切换到竖屏！')
+				return
+			}
+			//竖屏
+
+
+
+		})
+	</script>
+	<script>
+			(function () {
+				const computed = function computed() {
+					let html = document.documentElement
+					let curw = html.clientWidth,
+						desw = 750;
+					if ((curw >= desw)) {
+						html.style.fontSize = `100px`;
+						return
+					}
+					html.style.fontSize = `${curw / (desw / 100)}px`
+
+				}
+				computed();
+				window.addEventListener('resize', computed)
+			})()
+	</script>
+</head>
+
+<body>
+	<div id="app">
+		<!-- 头部 -->
+		<header class="header_box">
+			<div class="info">
+				<img src="./img/myDream.jpg" class="cover" alt="">
+				<div class="text">
+					<h2 class="title"> 富士山下 (《爱情转移》粤语版)</h2>
+					<h3 class="author">陈奕迅</h3>
+				</div>
+			</div>
+			<a href="javascript:;" class="music_btn"></a>
+		</header>
+		<!-- 整体 -->
+		<main class="main_box">
+			<div class="wrapper">
+				<!-- <p class="active">《我的梦》</p>
+				<p>词：张靓颖</p>
+				<p>曲:Andy</p>
+				<p>编曲：崔迪</p>
+				<p>一直地一直地往前走</p>
+				<p>一直地一直地往前走</p>
+				<p>一直地</p>
+				<p>一直地往前走</p> -->
+
+			</div>
+		</main>
+		<!-- 尾部 -->
+		<footer class="footer_box">
+			<div class="progress">
+				<span class="cur_time">00:00</span>
+				<div class="prog_bg">
+					<div class="prog_cur"></div>
+				</div>
+				<span class="total_time">00:00</span>
+
+			</div>
+			<a href="javascript:;" class="download">下载这首音乐</a>
+			<audio id="myAudio" src="./C400000Hv0Nh0m4ye8.m4a" controls preload="none" style="display:none"></audio>
+		</footer>
+		<!-- 遮罩层 -->
+		<div class="bg_img"></div>
+		<div class="bg_mark"></div>
+	</div>
+	<script src="./js/fastclick.js" defer></script>
+	<script src="./js/subscribe.js" defer></script>
+	<script src="./2.index.js" defer></script>
+
+</body>
+
+</html>
